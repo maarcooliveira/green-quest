@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en" ng-app='demoApp'>
+	<head>
+		<meta charset="UTF-8">
+		<title>Green Quest</title>
+		<script src="./lib/jquery-2.1.3.min/index.js"></script>
+		<script src="./lib/angular/angular.min.js"></script>
+		<script src="./lib/angular-route/angular-route.min.js"></script>
+		<script src="./js/app.js"></script>
+		<script src="./js/controllers.js"></script>
+		<script src="./js/services.js"></script>
+		<script src="./js/materialize.js"></script>
+
+		<link rel="stylesheet" href="./css/styles.css">
+		<link rel="stylesheet" href="./css/materialize.css">
+		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
+		<link rel="icon" href="./data/images/icon.png">
+		<meta name="theme-color" content="#212121">
+	  	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	</head>
+	<body>
+
+		<div class="navbar-fixed">
+			<nav>
+				<div class="nav-wrapper">
+					<div id="navbar">
+						<a href="#/home" class="brand-logo"><img class="nav-logo" src="./data/images/logo.png" alt=""></a>
+			            <a href="#/home" data-activates="mobile-demo" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
+						<ul id="nav-mobile" class="right hide-on-med-and-down">
+							<li><a href="#/ranking">Ranking</a></li>
+						</ul>
+			            <ul class="side-nav" id="mobile-demo">
+								<li><a href="#/ranking">Ranking</a></li>
+			            </ul>
+					</div>
+				</div>
+			</nav>
+		</div>
+
+		<main ng-view></main>
+		<footer class="page-footer">
+			<div class="container">
+			<div class="row">
+			  <div class="col l5 s12">
+			    <p class="grey-text text-lighten-4">GreenQuest</p>
+				<p class="grey-text text-lighten-4">UFSCar Sorocaba</p>
+			  </div>
+			  <div class="col l6 offset-l1 s12">
+			    <p class="white-text">Bacharelado em Ciência da Computação</p>
+			      <span class="white-text">Aplicações em TI para Sustentabilidade</span>
+			  </div>
+			</div>
+			</div>
+			<div class="footer-copyright">
+			<div class="container">
+			© 2015 UFSCar Sorocaba
+			<a class="grey-text text-lighten-4 right" href="http://materializecss.com/">Desenvolvido com Materialize</a>
+			</div>
+			</div>
+			</footer>
+	</body>
+</html>
