@@ -27,8 +27,22 @@ body {
 	display: flex;
 	min-height: 100vh;
 	flex-direction: column;
+	font-family: $font !important;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-weight: 200;
 }
 
 main {
 	flex: 1 0 auto;
+}
+
+.l-ico {
+	margin-right: 30px;
+}
+
+.l-ico:hover {
+	color: $icon-hover;
+	cursor: pointer;
 }

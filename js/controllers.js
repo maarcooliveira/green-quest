@@ -10,4 +10,8 @@ demoControllers.controller('RankingController', ['$scope', '$rootScope', '$route
 
 demoControllers.controller('MainController', ['$scope', '$rootScope', '$routeParams', '$window', function($scope, $rootScope, $routeParams, $window) {
 
+  $(document).ready(function(){
+    $('.tooltipped').tooltip({delay: 50});
+  });
+
 }]);
