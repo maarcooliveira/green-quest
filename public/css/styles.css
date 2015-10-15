@@ -3075,8 +3075,8 @@ td, th {
       border-bottom: none; }
     /* line 500, ../../sass/components/_global.scss */
     .collection .collection-item.active {
-      background-color: #0097a7;
-      color: #c1f9ff; }
+      background-color: #00A8C6;
+      color: #e0faff; }
       /* line 504, ../../sass/components/_global.scss */
       .collection .collection-item.active .secondary-content {
         color: #fff; }
@@ -3088,7 +3088,7 @@ td, th {
     -o-transition: 0.25s;
     -ms-transition: 0.25s;
     transition: 0.25s;
-    color: #0097a7; }
+    color: #00A8C6; }
     /* line 514, ../../sass/components/_global.scss */
     .collection a.collection-item:not(.active):hover {
       background-color: #ddd; }
@@ -3107,7 +3107,7 @@ td, th {
 /* line 536, ../../sass/components/_global.scss */
 .secondary-content {
   float: right;
-  color: #0097a7; }
+  color: #00A8C6; }
 
 /* line 540, ../../sass/components/_global.scss */
 .collapsible .collection {
@@ -3132,7 +3132,7 @@ span.badge {
     font-weight: 300;
     font-size: 0.8rem;
     color: #fff;
-    background-color: #0097a7;
+    background-color: #00A8C6;
     border-radius: 2px; }
   /* line 566, ../../sass/components/_global.scss */
   span.badge.new:after {
@@ -3168,7 +3168,7 @@ nav ul a span.badge {
   height: 4px;
   display: block;
   width: 100%;
-  background-color: #74f2ff;
+  background-color: #93efff;
   border-radius: 2px;
   margin: 0.5rem 0 1rem 0;
   overflow: hidden; }
@@ -3179,7 +3179,7 @@ nav ul a span.badge {
     top: 0;
     left: 0;
     bottom: 0;
-    background-color: #0097a7;
+    background-color: #00A8C6;
     -webkit-transition: width 0.3s linear;
     -moz-transition: width 0.3s linear;
     -o-transition: width 0.3s linear;
@@ -3187,7 +3187,7 @@ nav ul a span.badge {
     transition: width 0.3s linear; }
   /* line 615, ../../sass/components/_global.scss */
   .progress .indeterminate {
-    background-color: #0097a7; }
+    background-color: #00A8C6; }
     /* line 617, ../../sass/components/_global.scss */
     .progress .indeterminate:before {
       content: '';
@@ -7600,7 +7600,7 @@ small {
 .btn, .btn-large {
   text-decoration: none;
   color: #fff;
-  background-color: #0097a7;
+  background-color: #00A8C6;
   text-align: center;
   letter-spacing: .5px;
   -webkit-transition: 0.2s ease-out;
@@ -7611,7 +7611,7 @@ small {
   cursor: pointer; }
   /* line 50, ../../sass/components/_buttons.scss */
   .btn:hover, .btn-large:hover {
-    background-color: #00aec1; }
+    background-color: #00bee0; }
 
 /* line 57, ../../sass/components/_buttons.scss */
 .btn-floating {
@@ -7624,7 +7624,7 @@ small {
   height: 37px;
   line-height: 37px;
   padding: 0;
-  background-color: #0097a7;
+  background-color: #00A8C6;
   border-radius: 50%;
   transition: .3s;
   cursor: pointer;
@@ -7725,7 +7725,7 @@ button.btn-floating {
     /* line 27, ../../sass/components/_dropdown.scss */
     .dropdown-content li > a, .dropdown-content li > span {
       font-size: 1.2rem;
-      color: #0097a7;
+      color: #00A8C6;
       display: block;
       padding: 1rem 1rem; }
     /* line 35, ../../sass/components/_dropdown.scss */
@@ -8085,12 +8085,12 @@ a.waves-effect .waves-ripple {
 /* Remove Focus Boxes */
 /* line 2, ../../sass/components/_form.scss */
 select:focus {
-  outline: 1px solid #98f5ff; }
+  outline: 1px solid #b7f4ff; }
 
 /* line 5, ../../sass/components/_form.scss */
 button:focus {
   outline: none;
-  background-color: #00a9bb; }
+  background-color: #00b9da; }
 
 /* line 10, ../../sass/components/_form.scss */
 label {
@@ -8204,8 +8204,8 @@ textarea.materialize-textarea {
   input[type=number]:focus:not([readonly]),
   input[type=search]:focus:not([readonly]),
   textarea.materialize-textarea:focus:not([readonly]) {
-    border-bottom: 1px solid #0097a7;
-    box-shadow: 0 1px 0 0 #0097a7; }
+    border-bottom: 1px solid #00A8C6;
+    box-shadow: 0 1px 0 0 #00A8C6; }
   /* line 81, ../../sass/components/_form.scss */
   input[type=text]:focus:not([readonly]) + label,
   input[type=password]:focus:not([readonly]) + label,
@@ -8218,7 +8218,7 @@ textarea.materialize-textarea {
   input[type=number]:focus:not([readonly]) + label,
   input[type=search]:focus:not([readonly]) + label,
   textarea.materialize-textarea:focus:not([readonly]) + label {
-    color: #0097a7; }
+    color: #00A8C6; }
   /* line 85, ../../sass/components/_form.scss */
   input[type=text].valid, input[type=text]:focus.valid,
   input[type=password].valid,
@@ -8373,7 +8373,7 @@ textarea.materialize-textarea {
     transition: color 0.2s; }
     /* line 148, ../../sass/components/_form.scss */
     .input-field .prefix.active {
-      color: #0097a7; }
+      color: #00A8C6; }
   /* line 150, ../../sass/components/_form.scss */
   .input-field .prefix ~ input,
   .input-field .prefix ~ textarea {
@@ -8527,8 +8527,8 @@ textarea {
 /* line 299, ../../sass/components/_form.scss */
 [type="radio"]:checked + label:after {
   border-radius: 50%;
-  border: 2px solid #0097a7;
-  background-color: #0097a7;
+  border: 2px solid #00A8C6;
+  background-color: #00A8C6;
   z-index: 0;
   -webkit-transform: scale(1.02);
   -moz-transform: scale(1.02);
@@ -8540,13 +8540,13 @@ textarea {
 /* line 308, ../../sass/components/_form.scss */
 [type="radio"].with-gap:checked + label:before {
   border-radius: 50%;
-  border: 2px solid #0097a7; }
+  border: 2px solid #00A8C6; }
 
 /* line 312, ../../sass/components/_form.scss */
 [type="radio"].with-gap:checked + label:after {
   border-radius: 50%;
-  border: 2px solid #0097a7;
-  background-color: #0097a7;
+  border: 2px solid #00A8C6;
+  background-color: #00A8C6;
   z-index: 0;
   -webkit-transform: scale(0.5);
   -moz-transform: scale(0.5);
@@ -8655,8 +8655,8 @@ form p:last-child {
   height: 22px;
   border-top: 2px solid transparent;
   border-left: 2px solid transparent;
-  border-right: 2px solid #0097a7;
-  border-bottom: 2px solid #0097a7;
+  border-right: 2px solid #00A8C6;
+  border-bottom: 2px solid #00A8C6;
   -webkit-transform: rotate(40deg);
   -moz-transform: rotate(40deg);
   -ms-transform: rotate(40deg);
@@ -8682,7 +8682,7 @@ form p:last-child {
   height: 22px;
   border-top: none;
   border-left: none;
-  border-right: 2px solid #0097a7;
+  border-right: 2px solid #00A8C6;
   border-bottom: none;
   -webkit-transform: rotate(90deg);
   -moz-transform: rotate(90deg);
@@ -8750,8 +8750,8 @@ form p:last-child {
   top: 0px;
   width: 20px;
   height: 20px;
-  border: 2px solid #0097a7;
-  background-color: #0097a7;
+  border: 2px solid #00A8C6;
+  background-color: #00A8C6;
   z-index: 0; }
 /* line 517, ../../sass/components/_form.scss */
 [type="checkbox"].filled-in:disabled:not(:checked) + label:before {
@@ -8792,11 +8792,11 @@ form p:last-child {
 
 /* line 555, ../../sass/components/_form.scss */
 .switch label input[type=checkbox]:checked + .lever {
-  background-color: #42d5e4; }
+  background-color: #5ed3e8; }
 
 /* line 558, ../../sass/components/_form.scss */
 .switch label input[type=checkbox]:checked + .lever:after {
-  background-color: #0097a7; }
+  background-color: #00A8C6; }
 
 /* line 561, ../../sass/components/_form.scss */
 .switch label .lever {
@@ -8828,7 +8828,7 @@ form p:last-child {
 
 /* line 588, ../../sass/components/_form.scss */
 input[type=checkbox]:checked:not(:disabled) ~ .lever:active:after {
-  box-shadow: 0 1px 3px 1px rgba(0, 0, 0, 0.4), 0 0 0 15px rgba(0, 151, 167, 0.1); }
+  box-shadow: 0 1px 3px 1px rgba(0, 0, 0, 0.4), 0 0 0 15px rgba(0, 168, 198, 0.1); }
 
 /* line 591, ../../sass/components/_form.scss */
 input[type=checkbox]:not(:disabled) ~ .lever:active:after {
@@ -8985,7 +8985,7 @@ input[type=range] + .thumb {
   height: 0;
   width: 0;
   border-radius: 50%;
-  background-color: #0097a7;
+  background-color: #00A8C6;
   top: 10px;
   margin-left: -6px;
   -webkit-transform-origin: 50% 50%;
@@ -9003,7 +9003,7 @@ input[type=range] + .thumb {
     display: block;
     width: 30px;
     text-align: center;
-    color: #0097a7;
+    color: #00A8C6;
     font-size: 0;
     -webkit-transform: rotate(45deg);
     -moz-transform: rotate(45deg);
@@ -9041,7 +9041,7 @@ input[type=range]::-webkit-slider-thumb {
   height: 14px;
   width: 14px;
   border-radius: 50%;
-  background-color: #0097a7;
+  background-color: #00A8C6;
   transform-origin: 50% 50%;
   margin: -5px 0 0 0;
   -webkit-transition: 0.3s;
@@ -9072,7 +9072,7 @@ input[type=range]::-moz-range-thumb {
   height: 14px;
   width: 14px;
   border-radius: 50%;
-  background: #0097a7;
+  background: #00A8C6;
   margin-top: -5px; }
 
 /*hide the outline behind the border*/
@@ -9110,7 +9110,7 @@ input[type=range]::-ms-thumb {
   height: 14px;
   width: 14px;
   border-radius: 50%;
-  background: #0097a7; }
+  background: #00A8C6; }
 
 /* line 870, ../../sass/components/_form.scss */
 input[type=range]:focus::-ms-fill-lower {
@@ -9309,7 +9309,7 @@ select {
   width: 100%;
   height: 100%;
   opacity: 0;
-  border-color: #0097a7; }
+  border-color: #00A8C6; }
 
 /* line 69, ../../sass/components/_preloader.scss */
 .spinner-blue,
@@ -10192,7 +10192,7 @@ select {
 /* line 314, ../../sass/components/date_picker/_default.date.scss */
 .picker__date-display {
   text-align: center;
-  background-color: #0097a7;
+  background-color: #00A8C6;
   color: #fff;
   padding-bottom: 15px;
   font-weight: 300; }
@@ -10202,11 +10202,11 @@ select {
 .picker__nav--next:hover {
   cursor: pointer;
   color: #000000;
-  background: #67e5f3; }
+  background: #84e4f5; }
 
 /* line 329, ../../sass/components/date_picker/_default.date.scss */
 .picker__weekday-display {
-  background-color: #007783;
+  background-color: #008aa2;
   padding: 10px;
   font-weight: 200;
   letter-spacing: .5;
@@ -10254,7 +10254,7 @@ select {
 
 /* line 378, ../../sass/components/date_picker/_default.date.scss */
 .picker__day.picker__day--today {
-  color: #0097a7; }
+  color: #00A8C6; }
 
 /* line 382, ../../sass/components/date_picker/_default.date.scss */
 .picker__day.picker__day--today.picker__day--selected {
@@ -10274,13 +10274,13 @@ select {
   -ms-transform: scale(0.9);
   -o-transform: scale(0.9);
   transform: scale(0.9);
-  background-color: #0097a7;
+  background-color: #00A8C6;
   color: #ffffff; }
   /* line 399, ../../sass/components/date_picker/_default.date.scss */
   .picker__day--selected.picker__day--outfocus,
   .picker__day--selected:hover.picker__day--outfocus,
   .picker--focused .picker__day--selected.picker__day--outfocus {
-    background-color: #67e5f3; }
+    background-color: #84e4f5; }
 
 /* line 405, ../../sass/components/date_picker/_default.date.scss */
 .picker__footer {
@@ -10291,7 +10291,7 @@ select {
 .picker__close, .picker__today {
   font-size: 1.1rem;
   padding: 0 1rem;
-  color: #0097a7; }
+  color: #00A8C6; }
 
 /* line 418, ../../sass/components/date_picker/_default.date.scss */
 .picker__nav--prev:before,
@@ -10312,7 +10312,7 @@ select {
 
 /* line 433, ../../sass/components/date_picker/_default.date.scss */
 button.picker__today:focus, button.picker__clear:focus, button.picker__close:focus {
-  background-color: #67e5f3; }
+  background-color: #84e4f5; }
 
 /* ==========================================================================
    $BASE-TIME-PICKER
@@ -10481,18 +10481,31 @@ body {
   font-family: "Open Sans" !important; }
 
 /* line 33, ../../sass/_base.scss */
+::-moz-selection {
+  background: #deeeb9;
+  color: #94cc17;
+  text-shadow: none; }
+
+/* line 38, ../../sass/_base.scss */
+::selection {
+  background: #deeeb9;
+  color: #94cc17;
+  text-shadow: none; }
+
+/* line 44, ../../sass/_base.scss */
 h1, h2, h3, h4, h5, h6 {
   font-weight: 200; }
 
-/* line 37, ../../sass/_base.scss */
+/* line 48, ../../sass/_base.scss */
 main {
   flex: 1 0 auto; }
 
-/* line 41, ../../sass/_base.scss */
+/* line 52, ../../sass/_base.scss */
 .l-ico {
-  margin-right: 30px; }
+  margin-right: 15px;
+  margin-left: 15px; }
 
-/* line 45, ../../sass/_base.scss */
+/* line 57, ../../sass/_base.scss */
 .l-ico:hover {
   color: #AEE239;
   cursor: pointer; }
