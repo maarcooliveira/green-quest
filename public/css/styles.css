@@ -10479,85 +10479,83 @@ body {
   display: flex;
   min-height: 100vh;
   flex-direction: column;
-  font-family: "Open Sans" !important; }
+  font-family: "Open Sans" !important;
+  -moz-user-select: none;
+  /* Firefox */
+  -ms-user-select: none;
+  /* Internet Explorer */
+  -khtml-user-select: none;
+  /* KHTML browsers (e.g. Konqueror) */
+  -webkit-user-select: none;
+  /* Chrome, Safari, and Opera */
+  -webkit-touch-callout: none;
+  /* Disable Android and iOS callouts*/ }
 
-/* line 33, ../../sass/_base.scss */
-::-moz-selection {
-  background: #deeeb9;
-  color: #94cc17;
-  text-shadow: none; }
-
-/* line 38, ../../sass/_base.scss */
-::selection {
-  background: #deeeb9;
-  color: #94cc17;
-  text-shadow: none; }
-
-/* line 44, ../../sass/_base.scss */
+/* line 34, ../../sass/_base.scss */
 h1, h2, h3, h4, h5, h6 {
   font-weight: 200; }
 
-/* line 48, ../../sass/_base.scss */
+/* line 38, ../../sass/_base.scss */
 main {
   flex: 1 0 auto; }
 
-/* line 52, ../../sass/_base.scss */
+/* line 42, ../../sass/_base.scss */
 .l-ico {
   margin-right: 15px;
   margin-left: 15px; }
 
-/* line 57, ../../sass/_base.scss */
+/* line 47, ../../sass/_base.scss */
 .l-ico:hover {
   color: #AEE239;
   cursor: pointer; }
 
-/* line 62, ../../sass/_base.scss */
+/* line 52, ../../sass/_base.scss */
 #ktn {
   width: 100px;
   cursor: pointer; }
 
-/* line 67, ../../sass/_base.scss */
+/* line 57, ../../sass/_base.scss */
 #ktn-main {
   width: 137px;
   margin-bottom: -10px;
   margin-top: 10px; }
 
-/* line 73, ../../sass/_base.scss */
+/* line 63, ../../sass/_base.scss */
 #ktn-container {
   margin-bottom: -5px; }
 
-/* line 77, ../../sass/_base.scss */
+/* line 67, ../../sass/_base.scss */
 .collection-item:hover {
   cursor: pointer; }
 
-/* line 81, ../../sass/_base.scss */
+/* line 71, ../../sass/_base.scss */
 .opt:hover {
   font-weight: bold; }
 
-/* line 85, ../../sass/_base.scss */
+/* line 75, ../../sass/_base.scss */
 #timer-chip {
   margin-left: 5px; }
 
-/* line 89, ../../sass/_base.scss */
+/* line 79, ../../sass/_base.scss */
 .nav-logo {
   padding-top: 10px;
   padding-bottom: 10px; }
 
-/* line 94, ../../sass/_base.scss */
+/* line 84, ../../sass/_base.scss */
 .go {
   font-family: "Press Start 2P"; }
 
-/* line 98, ../../sass/_base.scss */
+/* line 88, ../../sass/_base.scss */
 input[type="text"] {
   font-size: 2em !important; }
 
-/* line 102, ../../sass/_base.scss */
+/* line 92, ../../sass/_base.scss */
 #game-over-modal {
   background-color: transparent !important;
   color: white !important; }
-  /* line 105, ../../sass/_base.scss */
+  /* line 95, ../../sass/_base.scss */
   #game-over-modal .modal-footer {
     background-color: transparent !important; }
-    /* line 107, ../../sass/_base.scss */
+    /* line 97, ../../sass/_base.scss */
     #game-over-modal .modal-footer a {
       color: white !important; }

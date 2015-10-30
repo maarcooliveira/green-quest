@@ -28,17 +28,7 @@ body {
 	min-height: 100vh;
 	flex-direction: column;
 	font-family: $font !important;
-}
-
-::-moz-selection {
- background: $selection;
- color: $selection-content;
- text-shadow: none;
-}
-::selection {
-	background: $selection;
-	color: $selection-content;
-	text-shadow: none;
+	@include user-select;
 }
 
 h1, h2, h3, h4, h5, h6 {
