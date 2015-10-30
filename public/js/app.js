@@ -8,7 +8,7 @@ demoApp.config(['$routeProvider', '$httpProvider', function ($routeProvider, $ht
 	 templateUrl: 'partials/main.html',
 	 controller: 'MainController'
 	}).
-	when('/pergunta', {
+	when('/pergunta/:id', {
 	 templateUrl: 'partials/pergunta.html',
 	 controller: 'GameController'
 	}).

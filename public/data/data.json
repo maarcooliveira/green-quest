@@ -1,0 +1,69 @@
+{
+    "perguntas": [
+        {
+            "id": "1",
+            "dificuldade": "1",
+            "pergunta": "A inevitável devastação ambiental decorrente do processo de desenvolvimento industrial é um \"quadro\" que começa a se modificar a partir da defesa pública de um novo conceito: O DESENVOLVIMENTO SUSTENTÁVEL. O uso dessa expressão tem a finalidade de:",
+            "alternativas": {
+                  "a": "sustentar a inevitável necessidade do desenvolvimento",
+                  "b": "garantir que o desenvolvimento contemporâneo não se sustenta",
+                  "c": "sustentar o meio ambiente em detrimento do desenvolvimento",
+                  "d": "propor a conciliação do desenvolvimento com o meio ambiente"
+              },
+            "correta": "d",
+            "justificativa": "essa é a certa porque sim",
+            "origem": "http://wikipedia.org"
+        },
+
+
+
+        {
+            "id": "2",
+            "dificuldade": "2",
+            "pergunta": "A Conferência de Estocolmo e o surgimento de organizações ambientalistas, como Greenpeace e WWF, provocaram mudanças na percepção social da questão ambiental no final do século XX. Dentre essas mudanças, a mais difundida foi a conscientização da:",
+            "alternativas": {
+                  "a": "limitação da tecnologia moderna",
+                  "b": "dimensão da interferência humana",
+                  "c": "recorrência do desmatamento intenso",
+                  "d": "insuficiência do abastecimento alimentar"
+              },
+            "correta": "b",
+            "justificativa": "essa é a certa porque sim",
+            "origem": "http://www.revista.vestibular.uerj.br/questao/questao-objetiva.php?seq_questao=1623"
+        },
+
+
+        {
+            "id": "3",
+            "dificuldade": "3",
+            "pergunta": "O lixo gerado especialmente nas cidades mais populosas se tornou, no último século, um dos fatores causadores de impactos ambientais nem sempre reversíveis a curto prazo. Um dos problemas e uma das soluções relativos ao acúmulo do lixo em áreas urbanas estão apresentados em:",
+            "alternativas": {
+                  "a": "poluição de ecossistemas fluviais - coleta seletiva",
+                  "b": "aumento da emissão de gases - remodelação de áreas de risco",
+                  "c": "destruição de reservas florestais - reciclagem de resíduos tóxicos",
+                  "d": "diminuição dos reservatórios de água - redistribuição de núcleos populacionais"
+              },
+            "correta": "a",
+            "justificativa": "essa é a certa porque sim",
+            "origem": "http://www.revista.vestibular.uerj.br/questao/questao-objetiva.php?seq_questao=1624"
+        },
+
+
+
+        {
+            "id": "4",
+            "dificuldade": "1",
+            "pergunta": "Com a implantação de atividades agropecuárias, populações muito reduzidas de uma mesma espécie podem ficar isoladas umas das outras em fragmentos florestais separados. Caso permaneçam em isolamento, tais populações podem tender à extinção. Sem a construção de corredores florestais, essas populações isoladas estariam sujeitas ao processo de extinção cuja causa é denominada:",
+            "alternativas": {
+                  "a": "pan-mixia",
+                  "b": "deriva gênica",
+                  "c": "seleção natural",
+                  "d": "migração diferencia"
+              },
+            "correta": "b",
+            "justificativa": "essa é a certa porque sim",
+            "origem": "http://www.revista.vestibular.uerj.br/questao/questao-objetiva.php?seq_questao=1684"
+        }
+
+    ]
+}

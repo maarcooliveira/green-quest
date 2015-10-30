@@ -1,47 +1,69 @@
 <section class="container">
-   <br>
+  <br>
 
-   <div class="chip">
-      <i class="fa fa-graduation-cap"></i>
-      Graduação
-   </div>
-   <div class="chip">
-      <i class="fa fa-book"></i>
-      Mídias Virtuais
-   </div>
-   <div class="chip">
-      <i class="fa fa-sitemap"></i>
-      Ambiental
-   </div>
-   <div class="chip right">
-      <i class="fa fa-clock-o"></i>
-      1:47
-   </div>
-   <br><br>
+  <div class="chip tooltipped" data-position="bottom" data-delay="50" data-tooltip="Nível">
+    <i class="fa fa-graduation-cap"></i>
+    <span ng-show='p.dificuldade == 1'>Graduação</span>
+    <span ng-show='p.dificuldade == 2'>Mestrado</span>
+    <span ng-show='p.dificuldade == 3'>Doutorado</span>
+  </div>
+  <div id="timer-chip" class="chip right tooltipped" data-position="bottom" data-delay="50" data-tooltip="Tempo restante">
+    <i class="fa fa-clock-o"></i>
+    <span id="timer"></span>
+  </div>
+  <div class="chip right tooltipped" data-position="bottom" data-delay="50" data-tooltip="Vidas">
+    <span ng-show='$root.lifes == 3'><i class="fa fa-heart"></i> <i class="fa fa-heart"></i> <i class="fa fa-heart"></i></span>
+    <span ng-show='$root.lifes == 2'><i class="fa fa-heart"></i> <i class="fa fa-heart"></i> <i class="fa fa-heart-o"></i></span>
+    <span ng-show='$root.lifes == 1'><i class="fa fa-heart"></i> <i class="fa fa-heart-o"></i> <i class="fa fa-heart-o"></i></span>
+    <span ng-show='$root.lifes == 0'><i class="fa fa-heart-o"></i> <i class="fa fa-heart-o"></i> <i class="fa fa-heart-o"></i></span>
+  </div>
+  <br><br>
 
-   <h5 class="center-align">Questão 1</h5>
-   <br>
-   <p class="center-align">A inevitável devastação ambiental decorrente do processo de desenvolvimento industrial é um "quadro" que começa a se modificar a partir da defesa pública de um novo conceito: O DESENVOLVIMENTO SUSTENTÁVEL.
-O uso dessa expressão tem a finalidade de:</p>
-   <br>
-   <div class="collection">
-      <a id="a" href="#!" class="collection-item opt red lighten-4">A) sustentar a inevitável necessidade do desenvolvimento</a>
-      <a id="b" href="#!" class="collection-item opt">B) garantir que o desenvolvimento contemporâneo não se sustenta</a>
-      <a id="c" href="#!" class="collection-item opt">C) sustentar o meio ambiente em detrimento do desenvolvimento</a>
-      <a id="d" href="#!" class="collection-item opt green lighten-4">D) propor a conciliação do desenvolvimento com o meio ambiente</a>
-   </div>
+  <h5 class="center-align">Questão {{$root.pos}}</h5>
+  <br>
+  <p class="center-align">{{p.pergunta}}</p>
+  <br>
+  <ul class="collection">
+    <li id="a" class="collection-item opt">A) {{p.alternativas.a}}</li>
+    <li id="b" class="collection-item opt">B) {{p.alternativas.b}}</li>
+    <li id="c" class="collection-item opt">C) {{p.alternativas.c}}</li>
+    <li id="d" class="collection-item opt">D) {{p.alternativas.d}}</li>
+  </ul>
 
-   <br>
-   <div class="row">
-      <div class="col s3">
-         <img src="http://placehold.it/100" alt="" />
-      </div>
-      <div class="col s9">
-         <blockquote>
-            Texto de ajuda
-         </blockquote>
-      </div>
+  <br>
+  <div class="row">
+    <div class="col s3 m2">
+      <img id="ktn" class="tooltipped" src="./data/images/k-padrao.png" alt="" data-position="bottom" data-delay="50" data-tooltip="Ajuda"/>
     </div>
+    <div class="col s9 m10">
+      <div class="card-panel">
+        <span id="ajuda">Precisa de ajuda?
+        </span>
+      </div>
+      <audio id="a-correct">
+        <source src="./data/audio/correct.wav" type="audio/wav">
+      </audio>
+      <audio id="a-wrong">
+        <source src="./data/audio/wrong.wav" type="audio/wav">
+      </audio>
+      <audio id="a-gameover">
+        <source src="./data/audio/gameover.wav" type="audio/wav">
+      </audio>
+    </div>
+  </div>
 
-   <a class="waves-effect waves-light btn right">Próxima <i class="material-icons right">done</i></a>
+  <a id="btn-proxima" href="/#/pergunta/{{next}}" style="visibility: hidden;" class="waves-effect waves-light btn right">Próxima <i class="material-icons right">done</i></a>
+
+  <div id="game-over-modal" class="modal modal-fixed-footer z-depth-0">
+    <div class="modal-content">
+      <h2 class="center go">GAME OVER</h2>
+      <br><br>
+      <h4 class="go">Score: {{$root.score}}</h4>
+      <br>
+      <input type="text" class="go go-input" name="name" ng-model="$root.name" placeholder="Nome">
+    </div>
+    <div class="modal-footer">
+      <a href="/#/ranking" class="modal-action modal-close waves-effect waves-light btn-flat go">Adicionar ao Ranking</a>
+    </div>
+  </div>
 </section>
