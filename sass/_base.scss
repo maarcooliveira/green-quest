@@ -58,3 +58,54 @@ main {
 	color: $icon-hover;
 	cursor: pointer;
 }
+
+#ktn {
+	width: 100px;
+	cursor: pointer;
+}
+
+#ktn-main {
+	width: 137px;
+	margin-bottom: -10px;
+	margin-top: 10px;
+}
+
+#ktn-container {
+	margin-bottom: -5px;
+}
+
+.collection-item:hover {
+	cursor: pointer;
+}
+
+.opt:hover {
+	font-weight: bold;
+}
+
+#timer-chip {
+	margin-left: 5px;
+}
+
+.nav-logo {
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+.go {
+	font-family: $go-font;
+}
+
+input[type="text"] {
+	font-size: 2em !important;
+}
+
+#game-over-modal {
+	background-color: transparent !important;
+	color: white !important;
+	.modal-footer {
+		background-color: transparent !important;
+		a {
+				color: white !important;
+		}
+	}
+}
