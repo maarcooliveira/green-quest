@@ -1,3 +1,29 @@
 <section class="container">
+  <br>
+  <h3 class="center"><i class="fa fa-trophy"></i> Ranking</h3>
 
+  <div class="row">
+    <div class="col s12 m8 offset-m2">
+      <table class="striped">
+        <thead>
+          <tr>
+              <th data-field="blank"> </th>
+              <th data-field="pos"><i class="fa fa-trophy"></i></th>
+              <th data-field="name">Nome</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr ng-repeat="pos in ranking">
+            <td></td>
+            <td class="centered">{{pos.posicao}}</td>
+            <td>{{pos.nome}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="row center">
+    <a id="btn-comecar" href="/#/home" class="waves-effect waves-light btn">Jogar novamente</a>
+  </div>
 </section>
