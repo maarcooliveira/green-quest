@@ -18,8 +18,7 @@ demoControllers.controller('GameController', ['$scope', '$rootScope', '$routePar
   var a_correct = document.getElementById("a-correct");
   var a_wrong = document.getElementById("a-wrong");
   var a_gameover = document.getElementById("a-gameover");
-
-  // $scope.question =
+  var a_countdown = document.getElementById("a-countdown");
 
   function init() {
     $('.modal-trigger').leanModal({
@@ -29,20 +28,25 @@ demoControllers.controller('GameController', ['$scope', '$rootScope', '$routePar
     $('.tooltipped').tooltip({delay: 50});
 
     // Inicializar o timer
-    var time = 60 * 1.5,
+    var time = 60 * 0.5,
     display = $('#timer');
     timerId = startTimer(time, display);
 
-    // Listeners para click, mouseover e mouseout para personagem de ajuda
-    $('#ktn').on('click', function() {
-      $('#ktn').addClass('fixed');
-      $('#ktn').attr('src', './data/images/k-responde.png');
 
-      $("#ajuda").typed({
-        strings: ["Hmmm.^500.^500.^500. ^1500 eu acho que é a A! ^500 Mas eu passei isso em sala, você devia saber essa"],
-        typeSpeed: 0,
-        showCursor: false
-      });
+    /* >> Controle do personagem de ajuda */
+    $('#ktn').on('click', function() {
+      if (!$('#ktn').hasClass('fixed')) {
+        $('#ktn').addClass('fixed');
+        $('#ktn').attr('src', './data/images/k-responde.png');
+        $("#ajuda").typed({
+          strings: ["Hmmm.^500.^500.^500. ^1500 eu acho que é a A! ^500 Mas eu passei isso em sala, você devia saber essa"],
+          typeSpeed: 0,
+          showCursor: false,
+          callback: function() {
+            $('#ktn').attr('src', './data/images/k-padrao.png');
+          }
+        });
+      }
     });
 
     $('#ktn').on('mouseover', function() {
@@ -54,8 +58,16 @@ demoControllers.controller('GameController', ['$scope', '$rootScope', '$routePar
       if (!$('#ktn').hasClass('fixed'))
         $('#ktn').attr('src', './data/images/k-padrao.png');
     });
+    /* << Controle do personagem de ajuda */
 
-    // Listener para mouseover e mouseout em alternativas
+
+    /* >> Controle das alternativas */
+    $('.opt').on('click', function(e) {
+      if (!$(e.target).hasClass('fixed')) {
+        checkResult(e.target.id);
+      }
+    });
+
     $('.opt').on('mouseover', function(e) {
       if (!$(e.target).hasClass('fixed')) {
         $('.opt').removeClass('grey lighten-2');
@@ -68,50 +80,59 @@ demoControllers.controller('GameController', ['$scope', '$rootScope', '$routePar
         $(e.target).removeClass('grey lighten-2');
       }
     });
-
-    $('.opt').on('click', function(e) {
-      if (!$(e.target).hasClass('fixed')) {
-        $('.opt').addClass('fixed');
-        $('#ktn').removeClass('fixed');
-        $('#ktn').attr('src', './data/images/k-padrao.png');
-        clearInterval(timerId);
-        $('#btn-proxima').css('visibility', 'visible');
-        checkResult(e.target.id);
-      }
-    });
+    /* << Controle das alternativas */
 
   }
 
+  /* Realiza mudanças na interface, bloqueia a seleção de outras alternativas, para
+    o tempo e confere se o jogador acertou ou não a questão.  */
   function checkResult(id) {
-    $('#' + id).removeClass('grey lighten-2');
-    if (id === $scope.p.correta) {
-      a_correct.play();
-      $rootScope.score += $scope.p.dificuldade;
+    a_countdown.pause();
+    clearInterval(timerId);
+    $('#btn-proxima').css('visibility', 'visible'); // Exibe botão p/ próxima questão
+    $('#' + id).removeClass('grey lighten-2'); // Remove cor de seleção da alternativa
+    $('#ktn').addClass('fixed'); // Desativa clicks e efeitos de mouseover na personagem
+    $('.opt').addClass('fixed');
+
+    if (id === $scope.p.correta) { // Jogador acertou a questão
+      a_correct.play(); // Toca o áudio de acerto
+      $rootScope.score += $scope.p.dificuldade; // Aumenta o score de acordo c/ nível
     }
     else {
-      $rootScope.$apply(function(){$rootScope.lifes = $rootScope.lifes - 1;});
-      if ($rootScope.lifes === 0) {
+      $('#' + id).addClass('pink lighten-4'); // Marca a alternativa como incorreta
+      $rootScope.$apply(function(){$rootScope.lifes = $rootScope.lifes - 1;}); // Jogador perde 1 vida
+      if ($rootScope.lifes === 0) { // As vidas acabaram, game over
         a_gameover.play();
         $('#game-over-modal').openModal({
           opacity: .9,
           dismissible: false
         });
       }
-      else {
+      else { // Jogador ainda tem vida(s)
         a_wrong.play();
       }
-      $('#' + id).addClass('pink lighten-4');
     }
+    $('#' + $scope.p.correta).addClass('green lighten-4'); // Marca a alternativa correta
+    mostrarJustificativa();
+  }
+
+  // Exibe como fala da personagem a justificativa da questão correta
+  function mostrarJustificativa() {
+    $('#ktn').attr('src', './data/images/k-responde.png');
     $("#ajuda").typed({
       strings: [$scope.p.justificativa],
       typeSpeed: 0,
-      showCursor: false
+      showCursor: false,
+      callback: function() {
+        $('#ktn').attr('src', './data/images/k-padrao.png');
+      }
     });
-    $('#' + $scope.p.correta).addClass('green lighten-4');
   }
 
+  // Inicializa timer da questão
   function startTimer(duration, display) {
     var timer = duration, minutes, seconds;
+    var ended = false;
     return setInterval(function () {
         minutes = parseInt(timer / 60, 10);
         seconds = parseInt(timer % 60, 10);
@@ -121,16 +142,23 @@ demoControllers.controller('GameController', ['$scope', '$rootScope', '$routePar
 
         display.text(minutes + ":" + seconds);
 
-        if (--timer < 0) {
-            timer = 0;
+        timer--;
+        if (timer === 8) {
+          a_countdown.play();
+        }
+        if (timer === -1) {
+          checkResult();
         }
     }, 1000);
   }
 
 }]);
 
-demoControllers.controller('RankingController', ['$scope', '$rootScope', '$routeParams', '$window', function($scope, $rootScope, $routeParams, $window) {
+demoControllers.controller('RankingController', ['$scope', '$rootScope', '$routeParams', '$window', '$http', function($scope, $rootScope, $routeParams, $window, $http) {
 
+  $http.get('./data/ranking.json').success(function(data) {
+    $scope.ranking = data.ranking;
+  });
 }]);
 
 demoControllers.controller('MainController', ['$scope', '$rootScope', '$routeParams', '$window', '$http', function($scope, $rootScope, $routeParams, $window, $http) {
