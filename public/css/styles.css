@@ -10559,3 +10559,18 @@ input[type="text"] {
     /* line 97, ../../sass/_base.scss */
     #game-over-modal .modal-footer a {
       color: white !important; }
+
+/* line 103, ../../sass/_base.scss */
+canvas {
+  display: block;
+  -webkit-mask-image: -webkit-gradient(linear, left top, left bottom, from(black), to(transparent)); }
+
+/* line 109, ../../sass/_base.scss */
+canvas:after {
+  position: absolute;
+  content: "";
+  left: 0px;
+  top: 0px;
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(rgba(0, 0, 0, 0), #808080); }

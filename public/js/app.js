@@ -12,6 +12,10 @@ demoApp.config(['$routeProvider', '$httpProvider', function ($routeProvider, $ht
 	 templateUrl: 'partials/pergunta.html',
 	 controller: 'GameController'
 	}).
+	when('/win', {
+	 templateUrl: 'partials/winner.html',
+	 controller: 'WinnerController'
+	}).
 	when('/ranking', {
 	 templateUrl: 'partials/ranking.html',
 	 controller: 'RankingController'

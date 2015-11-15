@@ -1,17 +1,25 @@
 var demoControllers = angular.module('demoControllers', []);
 
-demoControllers.controller('GameController', ['$scope', '$rootScope', '$routeParams', '$window', function($scope, $rootScope, $routeParams, $window) {
+demoControllers.controller('GameController', ['$scope', '$rootScope', '$routeParams', '$window', 'Questions', function($scope, $rootScope, $routeParams, $window, Questions) {
 
-  if (angular.isUndefined($rootScope.questions)) {
+  if (angular.isUndefined($rootScope.qarr)) {
     $window.location.href = '/#/home';
+  }
+  else if ($rootScope.pos === $rootScope.quantidade) {
+    $window.location.href = '/#/win';
   }
   else {
     var id = $routeParams.id;
-    $scope.p = $rootScope.questionDoc[$rootScope.pos]; //trocar pos;
+    console.log(id);
+    Questions.get({id: id}, function(data) {
+      $scope.p = data;
+      console.log(data);
+    });
     $rootScope.pos = $rootScope.pos + 1;
-    $scope.next = $rootScope.questions[$rootScope.pos];
+    $scope.next = $rootScope.qarr[$rootScope.pos];
     $(document).ready(init);
   }
+
 
   var stopTimer = false;
   var timerId;
@@ -94,9 +102,9 @@ demoControllers.controller('GameController', ['$scope', '$rootScope', '$routePar
     $('#ktn').addClass('fixed'); // Desativa clicks e efeitos de mouseover na personagem
     $('.opt').addClass('fixed');
 
-    if (id === $scope.p.correta) { // Jogador acertou a questão
+    if (parseInt(id,10) === $scope.p.questao[6].correta) { // Jogador acertou a questão
       a_correct.play(); // Toca o áudio de acerto
-      $rootScope.score += $scope.p.dificuldade; // Aumenta o score de acordo c/ nível
+      $rootScope.score += $scope.p.questao[1].dificuldade; // Aumenta o score de acordo c/ nível
     }
     else {
       $('#' + id).addClass('pink lighten-4'); // Marca a alternativa como incorreta
@@ -112,7 +120,7 @@ demoControllers.controller('GameController', ['$scope', '$rootScope', '$routePar
         a_wrong.play();
       }
     }
-    $('#' + $scope.p.correta).addClass('green lighten-4'); // Marca a alternativa correta
+    $('#' + $scope.p.questao[6].correta).addClass('green lighten-4'); // Marca a alternativa correta
     mostrarJustificativa();
   }
 
@@ -120,7 +128,7 @@ demoControllers.controller('GameController', ['$scope', '$rootScope', '$routePar
   function mostrarJustificativa() {
     $('#ktn').attr('src', './data/images/k-responde.png');
     $("#ajuda").typed({
-      strings: [$scope.p.justificativa],
+      strings: [$scope.p.questao[5].justificativa],
       typeSpeed: 0,
       showCursor: false,
       callback: function() {
@@ -161,16 +169,26 @@ demoControllers.controller('RankingController', ['$scope', '$rootScope', '$route
   });
 }]);
 
-demoControllers.controller('MainController', ['$scope', '$rootScope', '$routeParams', '$window', '$http', function($scope, $rootScope, $routeParams, $window, $http) {
+demoControllers.controller('MainController', ['$scope', '$rootScope', '$routeParams', '$window', '$http', 'Questions', function($scope, $rootScope, $routeParams, $window, $http, Questions) {
+
+  function shuffle(arr) {
+    for(var j, x, i = arr.length; i; j = parseInt(Math.random() * i), x = arr[--i], arr[i] = arr[j], arr[j] = x);
+    return arr;
+  }
 
   $rootScope.lifes = 3;
   $rootScope.score = 0;
   $rootScope.pos = 0;
-  $rootScope.questions = [21, 125, 76, 12, 42, 7, 30, 1];
   $rootScope.name = "";
 
-  $http.get('./data/data.json').success(function(data) {
-    $rootScope.questionDoc = data.perguntas;
+  Questions.getAllId(function(qids) {
+    $rootScope.qarr = shuffle(qids.id);
+    console.log($rootScope.qarr);
+  });
+
+  Questions.count(function(data) {
+    $rootScope.count = data.quantidade;
+    console.log($rootScope.quantidade);
   });
 
   $(document).ready(function() {
@@ -187,4 +205,15 @@ demoControllers.controller('MainController', ['$scope', '$rootScope', '$routePar
     });
   });
 
+}]);
+
+
+demoControllers.controller('WinnerController', ['$scope', '$rootScope', '$routeParams', '$window', '$http', function($scope, $rootScope, $routeParams, $window, $http) {
+
+  if ('WebkitAppearance' in document.documentElement.style) {
+    conf();
+  }
+  else {
+    $('#canvas').css('display', 'none');
+  }
 }]);

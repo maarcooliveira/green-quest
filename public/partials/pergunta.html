@@ -3,9 +3,9 @@
 
   <div class="chip tooltipped" data-position="bottom" data-delay="50" data-tooltip="Nível">
     <i class="fa fa-graduation-cap"></i>
-    <span ng-show='p.dificuldade == 1'>Graduação</span>
-    <span ng-show='p.dificuldade == 2'>Mestrado</span>
-    <span ng-show='p.dificuldade == 3'>Doutorado</span>
+    <span ng-show='p.questao[1].dificuldade == 1'>Graduação</span>
+    <span ng-show='p.questao[1].dificuldade == 2'>Mestrado</span>
+    <span ng-show='p.questao[1].dificuldade == 3'>Doutorado</span>
   </div>
   <div id="timer-chip" class="chip right tooltipped" data-position="bottom" data-delay="50" data-tooltip="Tempo restante">
     <i class="fa fa-clock-o"></i>
@@ -21,13 +21,13 @@
 
   <h5 class="center-align">Questão {{$root.pos}}</h5>
   <br>
-  <p class="center-align">{{p.pergunta}}</p>
+  <p class="center-align">{{p.questao[2].pergunta}}</p>
   <br>
   <ul class="collection">
-    <li id="a" class="collection-item opt">A) {{p.alternativas.a}}</li>
-    <li id="b" class="collection-item opt">B) {{p.alternativas.b}}</li>
-    <li id="c" class="collection-item opt">C) {{p.alternativas.c}}</li>
-    <li id="d" class="collection-item opt">D) {{p.alternativas.d}}</li>
+    <li id="{{p.respostas[0].id}}" class="collection-item opt">A) {{p.respostas[0].enunciado}}</li>
+    <li id="{{p.respostas[1].id}}" class="collection-item opt">B) {{p.respostas[1].enunciado}}</li>
+    <li id="{{p.respostas[2].id}}" class="collection-item opt">C) {{p.respostas[2].enunciado}}</li>
+    <li id="{{p.respostas[3].id}}" class="collection-item opt">D) {{p.respostas[3].enunciado}}</li>
   </ul>
 
   <br>
