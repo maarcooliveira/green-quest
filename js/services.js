@@ -35,7 +35,7 @@ angular.module('demoServices', [])
             })
             .error(function(data){
               console.log("Error");
-              console.log(data);
+              callback(data);
             });
           },
           top5: function(info, callback){

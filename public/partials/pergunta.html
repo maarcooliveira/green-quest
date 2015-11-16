@@ -58,15 +58,41 @@
   <a id="btn-proxima" href="/#/pergunta/{{next}}" style="visibility: hidden;" class="waves-effect waves-light btn right">Próxima <i class="material-icons right">done</i></a>
 
   <div id="game-over-modal" class="modal modal-fixed-footer z-depth-0">
-    <div class="modal-content">
-      <h2 class="center go">GAME OVER</h2>
+    <div id="gameover-container">
+      <div class="modal-content">
+        <h2 class="center go">GAME OVER</h2>
+        <br><br>
+        <h4 class="go">Score: {{$root.score}}</h4>
+        <br>
+        <input type="text" class="go go-input" name="name" ng-model="$root.name" placeholder="Nome">
+      </div>
+      <div class="modal-footer">
+        <a ng-click="addToRanking()" class="waves-effect waves-light btn-flat go">Adicionar ao Ranking</a>
+      </div>
+    </div>
+
+    <section class="container" id="loading-container" style="display: none;">
       <br><br>
-      <h4 class="go">Score: {{$root.score}}</h4>
+      <div class="row">
+        <div class="col s12 m8 offset-m2">
+          <h4 class="center white-text" id="prev-text"></h4>
+        </div>
+      </div>
       <br>
-      <input type="text" class="go go-input" name="name" ng-model="$root.name" placeholder="Nome">
-    </div>
-    <div class="modal-footer">
-      <a ng-click="addToRanking()" class="modal-action modal-close waves-effect waves-light btn-flat go">Adicionar ao Ranking</a>
-    </div>
+      <div class="row center">
+        <div class="preloader-wrapper big active">
+          <div class="spinner-layer spinner-blue-only">
+            <div class="circle-clipper left">
+              <div class="circle"></div>
+            </div><div class="gap-patch">
+              <div class="circle"></div>
+            </div><div class="circle-clipper right">
+              <div class="circle"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <br>
+    </section>
   </div>
 </section>

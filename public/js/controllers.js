@@ -160,11 +160,42 @@ demoControllers.controller('GameController', ['$scope', '$rootScope', '$routePar
     }, 1000);
   }
 
+  function changeText(element, texts, time) {
+    var text = texts.splice(0, 1) [0];
+    if (text) {
+      $( element ).fadeOut( "fast", function() {
+        element.innerHTML = '<h4>' + text + '</h4>';
+        $( element ).fadeIn("fast");
+      });
+
+      setTimeout(function () {
+        changeText(element, texts, time);
+      }, time);
+    }
+  }
+
+  var texts = [
+    'Enviando suas notas pra Katti',
+    'Adicionando as notas no SIGA',
+    'Vendo suas DPs em Complexidade',
+    'Aumentando seu IRA...'
+  ];
+  var time = 1500;
+
   $scope.addToRanking = function() {
-    Ranking.add({nome: $rootScope.name, pontos: $rootScope.score}, function(res) {
-      console.log(res);
-      $window.location.href = '/#/ranking';
-    });
+    $('#gameover-container').css('display', 'none');
+    $('#loading-container').fadeIn("fast");
+
+    var element = document.getElementById('prev-text');
+    changeText(element, texts, time);
+
+    setTimeout(function(){
+      Ranking.add({nome: $rootScope.name, pontos: $rootScope.score}, function(res) {
+        console.log(res);
+        $('#game-over-modal').closeModal();
+        $window.location.href = '/#/ranking';
+      });
+    }, 5000);
   }
 
 }]);
@@ -219,7 +250,8 @@ demoControllers.controller('MainController', ['$scope', '$rootScope', '$routePar
 
 
 demoControllers.controller('WinnerController', ['$scope', '$rootScope', '$routeParams', '$window', '$http', 'Ranking', function($scope, $rootScope, $routeParams, $window, $http, Ranking) {
-  $rootScope.score = 10;
+  var a_win = document.getElementById("a-win");
+  $rootScope.score = 0; //TODO: remover
   if ('WebkitAppearance' in document.documentElement.style) {
     conf();
   }
@@ -227,10 +259,42 @@ demoControllers.controller('WinnerController', ['$scope', '$rootScope', '$routeP
     $('#canvas').css('display', 'none');
   }
 
+  a_win.play();
+
+  function changeText(element, texts, time) {
+    var text = texts.splice(0, 1) [0];
+    if (text) {
+      $( element ).fadeOut( "fast", function() {
+        element.innerHTML = '<h4>' + text + '</h4>';
+        $( element ).fadeIn("fast");
+      });
+
+      setTimeout(function () {
+        changeText(element, texts, time);
+      }, time);
+    }
+  }
+
+  var texts = [
+    'Enviando suas notas pra Katti',
+    'Adicionando as notas no SIGA',
+    'Vendo suas DPs em Complexidade',
+    'Aumentando seu IRA...'
+  ];
+  var time = 1500;
+
   $scope.addToRanking = function() {
-    Ranking.add({nome: $rootScope.name, pontos: $rootScope.score}, function(res) {
-      console.log(res);
-      $window.location.href = '/#/ranking';
-    });
+    $('#winner-container').css('display', 'none');
+    $('#loading-container').fadeIn("fast");
+
+    var element = document.getElementById('prev-text');
+    changeText(element, texts, time);
+
+    setTimeout(function(){
+      Ranking.add({nome: $rootScope.name, pontos: $rootScope.score}, function(res) {
+        console.log(res);
+        $window.location.href = '/#/ranking';
+      });
+    }, 5000);
   }
 }]);
