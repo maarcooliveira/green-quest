@@ -5,7 +5,7 @@ demoControllers.controller('GameController', ['$scope', '$rootScope', '$routePar
   if (angular.isUndefined($rootScope.qarr)) {
     $window.location.href = '/#/home';
   }
-  else if ($rootScope.pos === $rootScope.quantidade) {
+  else if ($rootScope.pos === $rootScope.count) {
     $window.location.href = '/#/win';
   }
   else {
@@ -160,12 +160,23 @@ demoControllers.controller('GameController', ['$scope', '$rootScope', '$routePar
     }, 1000);
   }
 
+  $scope.addToRanking = function() {
+    Ranking.add({nome: $rootScope.name, pontos: $rootScope.score}, function(res) {
+      console.log(res);
+      $window.location.href = '/#/ranking';
+    });
+  }
+
 }]);
 
-demoControllers.controller('RankingController', ['$scope', '$rootScope', '$routeParams', '$window', '$http', function($scope, $rootScope, $routeParams, $window, $http) {
+demoControllers.controller('RankingController', ['$scope', '$rootScope', '$routeParams', '$window', '$http', 'Ranking', function($scope, $rootScope, $routeParams, $window, $http, Ranking) {
 
   $http.get('./data/ranking.json').success(function(data) {
     $scope.ranking = data.ranking;
+  });
+
+  Ranking.top5(function(res) {
+    console.log(res);
   });
 }]);
 
@@ -188,7 +199,6 @@ demoControllers.controller('MainController', ['$scope', '$rootScope', '$routePar
 
   Questions.count(function(data) {
     $rootScope.count = data.quantidade;
-    console.log($rootScope.quantidade);
   });
 
   $(document).ready(function() {
@@ -208,12 +218,19 @@ demoControllers.controller('MainController', ['$scope', '$rootScope', '$routePar
 }]);
 
 
-demoControllers.controller('WinnerController', ['$scope', '$rootScope', '$routeParams', '$window', '$http', function($scope, $rootScope, $routeParams, $window, $http) {
-
+demoControllers.controller('WinnerController', ['$scope', '$rootScope', '$routeParams', '$window', '$http', 'Ranking', function($scope, $rootScope, $routeParams, $window, $http, Ranking) {
+  $rootScope.score = 10;
   if ('WebkitAppearance' in document.documentElement.style) {
     conf();
   }
   else {
     $('#canvas').css('display', 'none');
+  }
+
+  $scope.addToRanking = function() {
+    Ranking.add({nome: $rootScope.name, pontos: $rootScope.score}, function(res) {
+      console.log(res);
+      $window.location.href = '/#/ranking';
+    });
   }
 }]);

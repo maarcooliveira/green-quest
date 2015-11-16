@@ -28,7 +28,26 @@ angular.module('demoServices', [])
     })
     .factory('Ranking', function($http, $window){
         return{
-
+          add: function(info, callback){
+            $http.post(baseUrl+'/set_rank/', $.param(info)).success(function(data){
+              console.log("Success");
+              callback(data);
+            })
+            .error(function(data){
+              console.log("Error");
+              console.log(data);
+            });
+          },
+          top5: function(info, callback){
+            $http.get(baseUrl+'/get_Top5/').success(function(data){
+              console.log("Success");
+              callback(data);
+            })
+            .error(function(data){
+              console.log("Error");
+              console.log(data);
+            });
+          }
         }
     })
     ;
