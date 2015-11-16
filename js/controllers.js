@@ -1,6 +1,6 @@
 var demoControllers = angular.module('demoControllers', []);
 
-demoControllers.controller('GameController', ['$scope', '$rootScope', '$routeParams', '$window', 'Questions', function($scope, $rootScope, $routeParams, $window, Questions) {
+demoControllers.controller('GameController', ['$scope', '$rootScope', '$routeParams', '$window', 'Questions', 'Ranking', function($scope, $rootScope, $routeParams, $window, Questions, Ranking) {
 
   if (angular.isUndefined($rootScope.qarr)) {
     $window.location.href = '/#/home';
