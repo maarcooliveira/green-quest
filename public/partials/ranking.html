@@ -8,16 +8,16 @@
         <thead>
           <tr>
               <th data-field="blank"> </th>
-              <th data-field="pos"><i class="fa fa-trophy"></i></th>
+              <th data-field="pos">Pontos</th>
               <th data-field="name">Nome</th>
           </tr>
         </thead>
 
         <tbody>
-          <tr ng-repeat="pos in ranking">
+          <tr ng-repeat="pos in ranking" ng-show="pos.nome">
             <td></td>
-            <td class="centered">{{pos.posicao}}</td>
-            <td>{{pos.nome}}</td>
+            <td class="">{{pos.pontos}} pontos</td>
+            <td class="">{{pos.nome}}</td>
           </tr>
         </tbody>
       </table>

@@ -3,9 +3,9 @@
 
   <div class="chip tooltipped" data-position="bottom" data-delay="50" data-tooltip="Nível">
     <i class="fa fa-graduation-cap"></i>
-    <span ng-show='p.questao[1].dificuldade == 1'>Graduação</span>
-    <span ng-show='p.questao[1].dificuldade == 2'>Mestrado</span>
-    <span ng-show='p.questao[1].dificuldade == 3'>Doutorado</span>
+    <span ng-show='p.questao[4].valor == 1'>Graduação</span>
+    <span ng-show='p.questao[4].valor == 2'>Mestrado</span>
+    <span ng-show='p.questao[4].valor == 3'>Doutorado</span>
   </div>
   <div id="timer-chip" class="chip right tooltipped" data-position="bottom" data-delay="50" data-tooltip="Tempo restante">
     <i class="fa fa-clock-o"></i>
@@ -38,6 +38,9 @@
     <div class="col s9 m10">
       <div class="card-panel">
         <span id="ajuda">Precisa de ajuda?
+        </span>
+        <br>
+        <span id="source" class="truncate">
         </span>
       </div>
       <audio id="a-correct">

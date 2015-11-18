@@ -38,7 +38,7 @@ angular.module('demoServices', [])
               callback(data);
             });
           },
-          top5: function(info, callback){
+          top5: function(callback){
             $http.get(baseUrl+'/get_Top5/').success(function(data){
               console.log("Success");
               callback(data);
