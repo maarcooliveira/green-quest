@@ -22,7 +22,12 @@ demoControllers.controller('GameController', ['$scope', '$rootScope', '$routePar
     var id = $routeParams.id;
     Questions.get({id: id}, prepareGame);
     $rootScope.pos = $rootScope.pos + 1;
-    $scope.next = $rootScope.qarr[$rootScope.pos];
+    if ($rootScope.pos === $rootScope.count) {
+      $scope.next = 0;
+    }
+    else {
+      $scope.next = $rootScope.qarr[$rootScope.pos];
+    }
   }
 
   function prepareGame(data) {
@@ -46,7 +51,7 @@ demoControllers.controller('GameController', ['$scope', '$rootScope', '$routePar
     $('.tooltipped').tooltip({delay: 50});
 
     // Inicializar o timer
-    var time = 60 * 1,
+    var time = 60 * 1.5,
     display = $('#timer');
     timerId = startTimer(time, display);
 
